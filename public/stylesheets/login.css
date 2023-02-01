@@ -1,0 +1,58 @@
+html{
+  background-color: rgba(175, 181, 188, 0.8);
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "logo pose"
+    "sign-in pose"
+  ;
+}
+
+#logo {
+  grid-area: logo;
+}
+
+h1{
+  font-size: 50px;
+  margin-bottom: 0px;
+}
+
+p {
+  margin-top: 0px;
+}
+
+a {
+  display: flex;
+  justify-items: center;
+  color: white;
+  height: 8vh;
+  width: 25vw;
+  text-decoration: none;
+  grid-area: sign-in;
+  background-color: rgba(255, 255, 255, .20);
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  transition: 0.15s;
+}
+a:hover {
+  background-color: rgba(255, 255, 255, .6);
+  color:  rgba(165, 165, 165, 0.9);
+}
+.login img {
+  height: 30px;
+}
+
+#login-backdrop {
+  height: 100%;
+  width: 100%;
+  z-index: -10;
+  grid-area: pose;
+  filter: blur(.5px);
+}
