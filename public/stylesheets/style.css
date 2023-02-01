@@ -1,0 +1,20 @@
+html {
+    background-color: rgba(175, 181, 188, 0.8);
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+}
+
+body>nav {
+    grid-area: nav;
+    background-color: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px 0 30px;
+  }
+
+a {
+    text-decoration: none;
+    color: white;
+}
+

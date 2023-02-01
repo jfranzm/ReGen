@@ -4,8 +4,9 @@ const router = express.Router();
 const isLoggedIn = require('../config/auth');
 
 router.get('/', (req, res) => {
-    res.render('landingPage/landingPage', {title: 'ReGen'});
+    res.render('createWorkout/index', {title: 'ReGen'});
 })
+
 
 
 module.exports = router

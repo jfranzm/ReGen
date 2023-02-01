@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/login', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
 });
 
 const db = mongoose.connection;

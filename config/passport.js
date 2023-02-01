@@ -27,15 +27,17 @@ passport.use(
                 .catch((err) => cb(err));
         }
     )
-)
+);
 
 passport.serializeUser((user, cb) => {
     cb(null, user._id);
 });
 
 passport.deserializeUser((userId, cb) => {
-    User.findById(userId).then(function(user) {
+    User.findById(userId)
+    .then(function(user) {
         cb(null, user);
-    });
+    })
+    .catch((err) => cb(err));
 });
 
