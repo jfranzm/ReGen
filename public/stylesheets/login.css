@@ -55,4 +55,5 @@ a:hover {
   z-index: -10;
   grid-area: pose;
   filter: blur(.5px);
+  background-blend-mode: multiply;
 }

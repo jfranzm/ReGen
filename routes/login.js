@@ -9,9 +9,6 @@ router.get('/', (req, res) => {
 router.get('/landingPage', (req, res) => {
     res.redirect('/landingPage');
 });
-router.post('/landingPage', (req, res) => {
-    res.redirect('/landingPage');
-})
 
 router.get('/auth/google', passport.authenticate(
     'google',

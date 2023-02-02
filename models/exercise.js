@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose;
+const {Schema} = mongoose;
 
 const exerciseSchema = new Schema(
     {
@@ -12,11 +12,10 @@ const exerciseSchema = new Schema(
             type: String,
             required: true,
         },
-        previewImage: {
-            type: 'image/png',
-            required: true,
-        },
+    },
+    {
+        timestamps: true,
     }
-)
+);
 
-module.exports = mongoose.model('Exercise', exerciseSchema)
+module.exports = mongoose.model('Exercise', exerciseSchema);
