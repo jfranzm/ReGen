@@ -1,0 +1,18 @@
+
+<%- include('../partials/header') %>
+<h1><%= title%></h1>
+<form class="form-floating" action="/exercises" method="POST">
+    <div class="form-floating mb-3">
+        <input required type="text" class="form-control" id="floatingInput" placeholder="Exercise Name" name="exerciseName">
+        <label for="floatingInput">Exercise Name</label>
+    </div>
+    <div class="form-floating">
+        <input required type="text" class="form-control" id="floatingPassword" placeholder="description" name="description">
+        <label for="floatingPassword">Description</label>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+</form>
+
+<%- include('../partials/footer') %>

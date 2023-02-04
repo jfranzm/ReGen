@@ -10,12 +10,14 @@ require('dotenv').config();
 require('./config/database');
 require('./config/passport');
 
+
 var loginRouter = require('./routes/login');
 var landingPageRouter = require('./routes/landingPage');
 var usersRouter = require('./routes/users');
-var indexRouter = require('./routes/index');
 var createWorkoutRouter = require('./routes/createWorkout');
 var exercisesRouter = require('./routes/exercises');
+var pagesRouter = require('./routes/pages');
+
 
 var app = express();
 
@@ -41,7 +43,7 @@ app.use((req, res, next) => {
 });
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter)
+app.use('/', pagesRouter);
 app.use('/login', loginRouter);
 app.use('/users', usersRouter);
 app.use('/landingPage', landingPageRouter);
