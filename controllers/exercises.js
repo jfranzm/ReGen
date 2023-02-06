@@ -11,12 +11,9 @@ function newExercise(req, res) {
 };
 
 function show(req, res) {
-    Exercise.findById(req.params.id).exec((err, exercise) => {
-        res.render('exercises/show', {
-            exercise: 'exerciseName',
-            description: 'description',
-        }, {title: 'exerciseName'});
-    });
+    Exercise.findById(req.params.id, function(err, exercise) {
+        res.render('exercises/show', {title: 'Exercise Detail', exercise});
+    })
 };
 
 function create(req, res) {
