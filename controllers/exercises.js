@@ -43,7 +43,7 @@ function deleteExercise(req, res, next) {
 };
 
 function update(req,res) {
-    Exercise.findById(req.params._id, function(err, exercise) {
+    Exercise.findById(req.params.id, function(err, exercise) {
         exercise.save(function(err) {
             res.redirect(`/exercises/${exercise._id}`);
         });
