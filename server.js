@@ -42,13 +42,14 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.static(path.join(__dirname, 'public')));
+const isLoggedIn = require('./config/auth');
 
 app.use('/', pagesRouter);
 app.use('/login', loginRouter);
 app.use('/users', usersRouter);
-app.use('/landingPage', landingPageRouter);
-app.use('/createWorkout', createWorkoutRouter);
-app.use('/exercises', exercisesRouter);
+app.use('/landingPage', isLoggedIn ,landingPageRouter);
+app.use('/createWorkout', isLoggedIn, createWorkoutRouter);
+app.use('/exercises', isLoggedIn, exercisesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -13,8 +13,8 @@ const workoutSchema = new Schema(
             type: String,
             required: true,
         },
-        
+
     }
 )
 
-module.exports = mongoose.model('workout', workoutSchema)
+module.exports = mongoose.model('Workout', workoutSchema)
