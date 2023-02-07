@@ -32,16 +32,15 @@ function edit(req, res) {
 };
 
 function deleteExercise(req, res, next) {
-    // Exercise.findById(req.params._id, function(err, exercise) {
-        Exercise.deleteOne(req.params._id)
-        // console.log(err);
-        // exercise.remove(function(err) {
-        //     res.redirect('/exercises');
-        // })
+    Exercise.findById(req.params._id, function(err, exercise) {
+        console.log(err);
+        exercise.remove(function(err) {
+            res.redirect('/exercises');
+        })
         .catch((err) => {
             next(err);
         })
-    // })
+    })
 };
 
 function update(req,res) {
