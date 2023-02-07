@@ -6,11 +6,24 @@ This app provides the user the ability to have access to clinically used exercis
 
 ### Screenshots
 
-![login](https://imgur.com/gallery/YCmZjKX)
 
 ### Technologies Used:
 * HTML/CSS/JS
 * Node.js + Express
 * MongoDB + Mongoose
 * OAuth 2.0
+
+### Getting Started
+
+[Checkout the app here](https://regen.herokuapp.com/login)
+
+### Next Steps
+* Be able to connect with personal trainers or physiotherapists that can supplement treatment
+* Be utilized by physiotherapists/kinesiologist/chiropractors to send at home exercises
+* Implement multiple types of injuries involving different body parts - eventually encompassing the entire body
+* Implement a system that categorically determines a possible diagnosis through referencing symptoms
+* Have categories within injuries to state stage of rehab
+
+
+
 
