@@ -12,6 +12,14 @@ const exerciseSchema = new Schema(
             type: String,
             required: true,
         },
+        imgLink: {
+            type: String,
+            required: true,
+        },
+        target: {
+            type: String,
+            required: true,
+        }
     },
     {
         timestamps: true,

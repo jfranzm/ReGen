@@ -17,7 +17,10 @@ var usersRouter = require('./routes/users');
 var createWorkoutRouter = require('./routes/createWorkout');
 var exercisesRouter = require('./routes/exercises');
 var pagesRouter = require('./routes/pages');
-
+var kneeRouter = require('./routes/knee');
+var lowbackRouter = require('./routes/lowback');
+var wristRouter = require('./routes/wrist');
+var shoulderRouter = require('./routes/shoulder');
 
 var app = express();
 
@@ -50,6 +53,10 @@ app.use('/users', usersRouter);
 app.use('/landingPage', isLoggedIn ,landingPageRouter);
 app.use('/createWorkout', isLoggedIn, createWorkoutRouter);
 app.use('/exercises', isLoggedIn, exercisesRouter);
+app.use('/createWorkout/knee', isLoggedIn, kneeRouter);
+app.use('/createWorkout/lowback', isLoggedIn, lowbackRouter);
+app.use('/createWorkout/wrist', isLoggedIn, wristRouter);
+app.use('/createWorkout/shoulder', isLoggedIn, shoulderRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

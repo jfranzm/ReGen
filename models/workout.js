@@ -1,18 +1,9 @@
 const mongoose = require('mongoose');
 
 const {Schema} = mongoose;
-
 const workoutSchema = new Schema(
     {
-        bodyPart: {
-            type: String,
-            required: true,
-            unique: true,
-        },
-        typesOfInjury: {
-            type: String,
-            required: true,
-        },
+        exercise: [{ type: Schema.Types.ObjectId, ref: 'Exercises'}]
 
     }
 )

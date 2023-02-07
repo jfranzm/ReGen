@@ -26,26 +26,31 @@ function create(req, res) {
 };
 
 function edit(req, res) {
-    Exercise.findById(req.params._id, (err, exercise) => {
-        if(!exercise.user.equals(req.user._id)) return res.redirect('/exercises');
-        res.render('exercises/edit', {exercise});
+    Exercise.findById(req.params.id, function(err, exercise) {
+        res.render('exercises/edit', {title: 'Update Exercise', exercise});
     });
 };
 
 function deleteExercise(req, res, next) {
-    Exercise.findById(req.params._id, function(err, exercise) {
-        if(!exercise.user.equals(req.user._id)) return res.redirect('/exercises');
-        exercise.remove(function(err) {
-            res.redirect('/exercises');
+    // Exercise.findById(req.params._id, function(err, exercise) {
+        Exercise.deleteOne(req.params._id)
+        // console.log(err);
+        // exercise.remove(function(err) {
+        //     res.redirect('/exercises');
+        // })
+        .catch((err) => {
+            next(err);
         })
-    })
+    // })
 };
 
 function update(req,res) {
     Exercise.findById(req.params._id, function(err, exercise) {
-        if(!exercise.user.equals(req.user._id)) return res.redirect('/exercises');
         exercise.save(function(err) {
             res.redirect(`/exercises/${exercise._id}`);
+        })
+        .catch((err) => {
+            next(err);
         })
     })
 }

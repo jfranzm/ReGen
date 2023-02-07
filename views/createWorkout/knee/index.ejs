@@ -1,0 +1,40 @@
+<%- include('../../partials/header') %>
+<h1><%= title%></h1>
+<img src="	https://i.pinimg.com/564x/b9/04/a6/b904a63ecf168825620a84f7cf1fc476.jpg" alt="Knee Injury">
+<p>Knee injuries involve trauma to one or more tissues taht make up the knee joint (e.g., ligaments, tendons, cartilage, bones, and muscles.
+    These types of injuries may happen due to a fall, forcefull twisting of the knee, or from high impact from either a motor vehicle accident
+    or some other kind of external force. Common knee injuries include fractures, dislocations, tears, and sprains which are likely to required
+    immediate medical attention or surgery.
+</p>
+
+<h4>Examples of Common Knee injuries</h4>
+<p>ACL tears, meniscus tears, patellar tendonitis, patellar fractures...</p>
+
+<h4>What to work on?</h4>
+<p>Typically, the main focus in strengthening prior to surgery for chronic knee injuries - such as arthritis - and even after some time after post-surgery 
+    is to work on strengthening the quads, hamstrings, and hip abductors.
+</p>
+
+<h3>Some exercises that can help</h3>
+<% if (exercise.target === "knee") {
+    <ul>
+        <% exercises.forEach((e) => { %>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= e.exerciseName %></h5>
+                        <p class="card-text"><%= e.description %></p>
+                        <a href="/exercises/<%= e._id %>" class="btn btn-primary">Details</a>
+                        <form action="/exercises/<%= e._id %>?_method=DELETE" class="delete-form" method="POST">
+                            <button type="submit">Delete Exercise</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </ul>
+}
+<%- include('../../partials/footer') %>

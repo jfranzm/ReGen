@@ -8,10 +8,10 @@
             <div class="card" style="width: 18rem;">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"><%= e.exerciseName%></h5>
-                    <p class="card-text"><%= e.description%></p>
+                    <h5 class="card-title"><%= e.exerciseName %></h5>
+                    <p class="card-text"><%= e.description %></p>
                     <a href="/exercises/<%= e._id %>" class="btn btn-primary">Details</a>
-                    <form action="/exercises/<%= e.id%>?_method=DELETE" class="delete-form" method="POST">
+                    <form action="/exercises/<%= e._id %>?_method=DELETE" class="delete-form" method="POST">
                         <button type="submit">Delete Exercise</button>
                     </form>
                 </div>
