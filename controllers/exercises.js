@@ -35,14 +35,13 @@ function edit(req, res) {
 function deleteExercise(req, res, next) {
     Exercise.findOne({
         'exercises._id': req.params.id,
-        'exercises.user': req.user._id,
     })
     .then((exercise) => {
         if (!exercise) return res.redirect(`/exercises/${exercise._id}`);
         exercise.remove(req.params.id);
         exercise
             .save()
-            .then(() => res.redirect(`/exercises/${exercise._id}`))
+            .then(() => res.redirect(`/exercises`))
             .catch((err) => next(err));
     })
     .catch((err) => {
