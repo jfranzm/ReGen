@@ -15,6 +15,7 @@ body {
 
 #logo {
   grid-area: logo;
+  justify-self: center;
 }
 
 h1{
@@ -40,6 +41,7 @@ a {
   border-radius: 10px;
   border: none;
   transition: 0.15s;
+  justify-self: center;
 }
 a:hover {
   background-color: rgba(255, 255, 255, .6);
