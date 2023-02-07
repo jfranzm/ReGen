@@ -39,9 +39,6 @@ function deleteExercise(req, res, next) {
         exercise.remove(function(err) {
             res.redirect('/exercises');
         });
-        // .catch((err) => {
-        //     next(err);
-        // })
     })
 };
 
@@ -49,11 +46,8 @@ function update(req,res) {
     Exercise.findById(req.params._id, function(err, exercise) {
         exercise.save(function(err) {
             res.redirect(`/exercises/${exercise._id}`);
-        })
-        .catch((err) => {
-            next(err);
-        })
-    })
+        });
+    });
 }
 module.exports = {
     index,
