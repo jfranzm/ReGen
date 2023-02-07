@@ -1,0 +1,13 @@
+<section id="show-page">
+    <div>Body Part: </div>
+    <div>
+      <%= workouts.bodyPart %>
+    </div>
+    <div>Types of Injury: </div>
+    <div>
+      <%= workouts.typesOfInjury %>
+    </div>
+    <form action="/createWorkout/<%= workouts._id%>?_method=DELETE" class="delete-form" method="POST">
+        <button type="submit">Delete Body Part</button>
+    
+</section>
