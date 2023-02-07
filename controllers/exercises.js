@@ -33,20 +33,21 @@ function edit(req, res) {
 };
 
 function deleteExercise(req, res, next) {
-    Exercise.findOne({
-        'exercises._id': req.params.id,
+    Exercise.findById(req.params.id, function(err, exercise) {
+        if(!exercise.user.equals(req.user._id)) return res.redirect('/exercises');
+        exercise.remove(function(err) {
+            res.redirect('/exercises');
+        })
     })
-    .then((exercise) => {
-        if (!exercise) return res.redirect(`/exercises/${exercise._id}`);
-        exercise.remove(req.params.id);
-        exercise
-            .save()
-            .then(() => res.redirect(`/exercises`))
-            .catch((err) => next(err));
+};
+
+function update(req,res) {
+    Exercise.findById(req.params.id, function(err, exercise) {
+        if(!exercise.user.equals(req.user._id)) return res.redirect('/exercises');
+        exercise.save(function(err) {
+            res.redirect(`/exercises/${exercise._id}`);
+        })
     })
-    .catch((err) => {
-        next(err);
-    });
 }
 module.exports = {
     index,
@@ -54,5 +55,6 @@ module.exports = {
     new: newExercise,
     create,
     edit,
-    delete: deleteExercise
+    delete: deleteExercise,
+    update,
 }

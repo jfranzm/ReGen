@@ -8,7 +8,5 @@
     <div>
       <%= exercise.description %>
     </div>
-    <form action="/exercises/<%= e._id%>?_method=DELETE" class="delete-form" method="POST">
-        <button type="submit">Delete Exercise</button>
-    
+    <a href="/exercises/<%= exercise.id %>/edit">Edit Exercise</a>
 </section>

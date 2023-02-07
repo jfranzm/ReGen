@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+<h1>Edit Exercise</h1>
+<form class="form-floating" action="/exercises/<%= exercise.id %>?_method=PUT" method="POST" autocomplete="off">
+    <div class="form-floating mb-3">
+        <input required type="text" class="form-control" id="floatingInput" placeholder="Exercise Name" name="exerciseName" value="<%= exercise.exerciseName">
+        <label for="floatingInput">Exercise Name</label>
+    </div>
+    <div class="form-floating">
+        <input required type="text" class="form-control" id="floatingInput" placeholder="description" name="description" value="exercise.description">
+        <label for="floatingInput">Description</label>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+</form>
+
+<%- include('../partials/footer') %>
