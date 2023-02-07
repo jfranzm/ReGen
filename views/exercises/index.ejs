@@ -11,7 +11,7 @@
                     <h5 class="card-title"><%= e.exerciseName %></h5>
                     <p class="card-text"><%= e.description %></p>
                     <a href="/exercises/<%= e._id %>" class="btn btn-primary">Details</a>
-                    <form action="/exercises/<%= e._id %>?_method=DELETE" class="delete-form" method="GET">
+                    <form action="/exercises/<%= e._id %>?_method=DELETE" class="delete-form" method="POST">
                         <button type="submit">Delete Exercise</button>
                     </form>
                 </div>
