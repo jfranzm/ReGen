@@ -3,13 +3,17 @@
 <a href="/exercises/new">Add Exercise</a>
 <ul>
     <% exercises.forEach((e) => { %>
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title"><%= e.exerciseName%></h5>
-            <p class="card-text"><%= e.description%></p>
-            <a href="/exercises/<%= e._id %>" class="btn btn-primary">Details</a>
-              </form>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><%= e.exerciseName%></h5>
+                    <p class="card-text"><%= e.description%></p>
+                    <a href="/exercises/<%= e._id %>" class="btn btn-primary">Details</a>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     <% }) %>
