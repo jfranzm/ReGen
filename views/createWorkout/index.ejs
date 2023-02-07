@@ -66,6 +66,9 @@
                 <p class="card-text"><%= w.typesOfInjury%></p>
                 <a href="/createWorkout/<%= w._id %>" class="btn btn-primary">Details</a>
                 </form>
+                <form action="/createWorkout/<%= w._id%>?_method=DELETE" class="delete-form" method="POST">
+                    <button type="submit">Delete Body Part</button>
+                </form>
             </div>
         </div>
     </div>
