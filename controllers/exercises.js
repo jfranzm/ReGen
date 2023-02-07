@@ -33,7 +33,7 @@ function edit(req, res) {
 
 function deleteExercise(req, res, next) {
     console.log("deleteExercise", req.params);
-    Exercise.findById(req.params._id, function(err, exercise) {
+    Exercise.findById(req.params.id, function(err, exercise) {
         console.log('exercise', exercise, ' -- ');
         console.log("err", err);
         exercise.remove(function(err) {
