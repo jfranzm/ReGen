@@ -32,10 +32,10 @@ function edit(req, res) {
 };
 
 function deleteExercise(req, res, next) {
-    console.log("deleteExercise", req, res);
+    console.log("deleteExercise", req.params);
     Exercise.findById(req.params._id, function(err, exercise) {
-        // console.log('req', req);
-        console.log(err);
+        console.log('exercise', exercise, ' -- ');
+        console.log("err", err);
         exercise.remove(function(err) {
             res.redirect('/exercises');
         })
