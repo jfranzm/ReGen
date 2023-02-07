@@ -16,6 +16,8 @@ body {
 #logo {
   grid-area: logo;
   justify-self: center;
+  margin-top: 10vh;
+  margin-right: 10vw;
 }
 
 h1{
