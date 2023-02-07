@@ -38,10 +38,10 @@ function deleteExercise(req, res, next) {
         console.log("err", err);
         exercise.remove(function(err) {
             res.redirect('/exercises');
-        })
-        .catch((err) => {
-            next(err);
-        })
+        });
+        // .catch((err) => {
+        //     next(err);
+        // })
     })
 };
 
