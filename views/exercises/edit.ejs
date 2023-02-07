@@ -8,6 +8,17 @@
         <input required type="text" class="form-control" id="floatingInput" placeholder="description" name="description" value="<%=exercise.description %>">
         <label for="floatingInput">Description</label>
     </div>
+    <div class="form-floating">
+        <input required type="text" class="form-control" id="floatingInput" placeholder="Image Link" name="imgLink">
+        <label for="floatingInput">Image Link</label>
+    </div>
+    <select class="form-select" aria-label="Default select example" name="target">
+        <option selected>Target Area</option>
+        <option value="knee">Knee</option>
+        <option value="lowback">Low Back</option>
+        <option value="wrist">Wrist</option>
+        <option value="shoulder">Shoulder</option>
+    </select>
     <div class="col-12">
         <button class="btn btn-primary" type="submit">Submit form</button>
     </div>

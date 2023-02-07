@@ -32,7 +32,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(methodOverride('_method'));
 app.use(session({
   secret: process.env.SECRET,
   resave: false,
@@ -45,6 +44,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 const isLoggedIn = require('./config/auth');
 
 app.use('/', pagesRouter);

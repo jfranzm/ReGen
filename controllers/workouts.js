@@ -29,6 +29,7 @@ function shoulderIndex(req, res) {
         res.render('createWorkout/shoulder/index', {title:'Shoulder'});
     });
 };
+
 module.exports = {
     index,
     kneeIndex,
